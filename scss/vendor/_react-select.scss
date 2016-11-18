@@ -1,0 +1,66 @@
+
+.Select {
+  width: 100%;
+  @include breakpoint(md) {
+    width: 50%;
+  }
+}
+
+.Select-control {
+  border: none !important;
+  border-radius: 0 !important;
+  border-bottom: rem-calc( 1px ) solid $input-bottom-border !important;
+
+  &:hover {
+    box-shadow: none !important;
+  }
+
+  .Select-placeholder {
+    color: $input-base-color;
+    font-size: rem-calc( 14px );
+    font-family: 'Quattrocento Sans', sans-serif !important;
+
+    padding-left: 0;
+  }
+
+  .Select-value {
+    padding-left: 0 !important;
+  }
+
+  .Select-value-label {
+    width: 100% !important;
+    color: $input-base-color;
+    font-size: rem-calc( 14px );
+    font-family: 'Quattrocento Sans', sans-serif !important;
+  }
+
+  .Select-input input {
+    width: 100% !important;
+    color: $input-base-color;
+    font-size: rem-calc( 14px );
+    font-family: 'Quattrocento Sans', sans-serif !important;
+  }
+
+  .Select-input {
+    padding-left: 0;
+  }
+
+}
+
+.Select-clear-zone {
+  display: none !important;
+}
+
+.Select-menu-outer {
+  border: none !important;
+  border-left: 1px solid $input-bottom-border !important;
+  border-right: 1px solid $input-bottom-border !important;
+  border-radius: 0 !important;
+}
+
+.Select-option {
+  color: $input-base-color !important;
+  font-size: rem-calc( 14px ) !important;
+  font-family: 'Quattrocento Sans', sans-serif !important;
+  border-bottom: rem-calc( 1px ) solid $input-bottom-border !important;
+}

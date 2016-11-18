@@ -1,0 +1,86 @@
+/// import colors
+@import '_colors';
+
+/// import utils
+@import '_utils';
+
+/// import extends
+@import '_extends';
+
+/// import mixins
+@import '_mixins';
+
+/// Font size attribute applied to `<html>` and `<body>`. We use 100% by default so the value is inherited from the user's browser settings.
+/// @type Number
+$global-font-size: 100% !default;
+
+/// Global width of your site. Used by the grid to determine row width.
+/// @type Number
+$global-width: rem-calc(1200) !default;
+
+/// Default line height for all type. `$global-lineheight` is 24px while `$global-font-size` is 16px
+/// @type Number
+$global-lineheight: 1.5 !default;
+
+/// Background color of the body.
+/// @type Color
+$body-background: $white !default;
+
+/// Text color of the body.
+/// @type Color
+$body-font-color: $mine-shaft !default;
+
+/// Font stack of the body.
+/// @type List
+$body-font-family: Arial, sans-serif !default;
+
+/// Set to `true` to enable antialiased type, using the `-webkit-font-smoothing` and `-moz-osx-font-smoothing` CSS properties.
+/// @type Boolean
+$body-antialiased: true !default;
+
+/// Global value used for margin on components.
+/// @type Number
+$global-margin: 1rem !default;
+
+/// Global value used for padding on components.
+/// @type Number
+$global-padding: 1rem !default;
+
+/// Global font weight used for normal type.
+/// @type Keyword | Number
+$global-weight-normal: normal !default;
+
+/// Global font weight used for bold type.
+/// @type Keyword | Number
+$global-weight-bold: bold !default;
+
+/// Global value used for all elements that have a border radius.
+/// @type Number
+$global-radius: 0 !default;
+
+/// Sets the text direction of the CSS. Can be either `ltr` or `rtl`.
+/// @type Keyword
+$global-text-direction: ltr !default;
+
+/// Enables flexbox for components that support it.
+/// @type Boolean
+$global-flexbox: false !default;
+
+body {
+  margin: rem-calc(0);
+  padding: rem-calc(0);
+  overflow-x: hidden !important;
+}
+
+.solo_container {
+  padding: rem-calc( 50px 25px 0 );
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}

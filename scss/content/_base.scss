@@ -1,0 +1,44 @@
+/// import colors
+@import '_colors';
+
+/// import utils
+@import '_utils';
+
+/// import extends
+@import '_extends';
+
+/// import mixins
+@import '_mixins';
+
+.solo_openletter {
+  max-width: rem-calc( 550px );
+}
+
+.solo_openletter,
+.solo_mbc,
+.solo_calculator {
+
+  ul {
+    @include clearfix;
+  }
+
+  li a {
+    float: left;
+    font-size: rem-calc( 12px );
+    margin-right: rem-calc( 20px );
+  }
+
+  p {
+    font-size: rem-calc( 12px );
+  }
+
+}
+
+.solo_social {
+
+  margin-top: rem-calc( 40px );
+
+  p {
+    width: rem-calc( 200px );
+  }
+}

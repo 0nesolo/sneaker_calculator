@@ -1,0 +1,18 @@
+{
+    "calculatedInputs": {
+        "sneakersQuantity": 6,
+        "sneakersCost": 973.98,
+        "sneakersResaleAverage": 324.66,
+        "sneakersCostForFree": 486.99,
+        "sneakersCostForResale": 486.99,
+        "associates": false,
+        "totalCost": 973.98
+    },
+    "userInputs": {
+        "sneakerName": "AirJordans",
+        "sneakerCost": 162.33,
+        "sneakersQuantityForFree": 3,
+        "sneakersQuantityForResale": 3,
+        "associates": false
+    }
+}

@@ -1,0 +1,70 @@
+/// import colors
+@import '_colors';
+
+/// import utils
+@import '_utils';
+
+/// import extends
+@import '_extends';
+
+/// import mixins
+@import '_mixins';
+
+h1, h2, h3, h4, h5, h6, p, a, small, span {
+  color: $input-base-color;
+  font-family: Arial;
+}
+
+h1 {
+  font-size: rem-calc( 36px );
+  line-height: rem-calc( 40px );
+}
+
+h2 {
+  font-size: rem-calc( 32px );
+  line-height: rem-calc( 36px );
+}
+
+h3 {
+  font-size: rem-calc( 28px );
+  line-height: rem-calc( 32px );
+}
+
+h4 {
+  font-size: rem-calc( 24px );
+  line-height: rem-calc( 28px );
+}
+
+h5 {
+  font-size: rem-calc( 20px );
+  line-height: rem-calc( 24px );
+}
+
+h6 {
+  font-size: rem-calc( 16px );
+  line-height: rem-calc( 20px );
+}
+
+p {
+  font-size: rem-calc( 16px );
+  line-height: rem-calc( 24px );
+}
+
+a {
+
+  text-decoration: none;
+  font-size: rem-calc( 12px );
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    text-decoration: none;
+  }
+
+}
+small, span {
+  color: $black;
+  font-size: rem-calc( 10px );
+}

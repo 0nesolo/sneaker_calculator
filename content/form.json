@@ -1,0 +1,96 @@
+{
+  "hideResultsText": "HIDE RESULTS",
+  "showResultsText": "SHOW RESULTS",
+
+  "hideResults": false,
+
+  "sneakerNameHide": true,
+  "sneakerNameValue": "",
+  "sneakerNameText": "SNEAKER NAME",
+  "sneakerNamePlaceHolder": "Sneaker name",
+  "sneakerNameNs": "sneakerName",
+  "sneakerNameMessage": "Name of sneaker your purchasing",
+
+  "sneakerCostHide": true,
+  "sneakerCostValue": "",
+  "sneakerCostText": "SNEAKER COST",
+  "sneakerCostPlaceHolder": "Sneaker cost",
+  "sneakerCostNs": "sneakerCost",
+  "sneakerCostMessage": "Cost of sneaker your purchasing",
+
+  "sneakerQuantityForFreeHide": true,
+  "sneakerQuantityForFreeValue": "",
+  "sneakerQuantityForFreeText": "SNEAKERS QUANTITY FOR FREE",
+  "sneakerQuantityForFreePlaceHolder": "Sneakers quantity for free",
+  "sneakerQuantityForFreeNs": "sneakersQuantityForFree",
+  "sneakerQuantityForFreeMessage": "How many sneakers do you want for free",
+
+  "sneakerQuantityForResaleHide": true,
+  "sneakerQuantityForResaleValue": "",
+  "sneakerQuantityForResaleText": "SNEAKERS QUANTITY FOR RESALE",
+  "sneakerQuantityForResalePlaceHolder": "Sneakers quantity for resale",
+  "sneakerQuantityForResaleNs": "sneakersQuantifyrForResale",
+  "sneakerQuantityForResaleMessage": "How may sneakers you will resale",
+
+  "associatesHide": true,
+  "associatesValue": "",
+  "associatesText": "ASSOCIATES",
+  "associatesPlaceHolder": "associates",
+  "associatesNs": "associates",
+  "associatesOptions": [
+    {
+      "value": "yes",
+      "label": "yes"
+    },
+    {
+      "value": "no",
+      "label": "no"
+    }
+  ],
+
+  "associatesHoursHide": true,
+  "associatesHoursValue": "",
+  "associatesHoursText": "ASSOCIATES HOURS",
+  "associatesHoursPlaceHolder": "Associates hours",
+  "associatesHoursNs": "associatesHours",
+  "associatesHoursMessage": "How many hours do you expect to pay them for",
+
+  "associatesQuantityHide": true,
+  "associatesQuantityValue": "",
+  "associatesQuantityText": "ASSOCIATES QUANTITY",
+  "associatesQuantityPlaceHolder": "Associates quantity",
+  "associatesQuantityNs": "associatesQuantity",
+  "associatesQuantityMessage": "How many associates would you like to hire",
+
+  "associatesPayPerHourHide": true,
+  "associatesPayPerHourValue": "",
+  "associatesPayPerHourText": "ASSOCIATES PAY PER HOUR",
+  "associatesPayPerHourPlaceHolder": "Associates cost per hour",
+  "associatesPayPerHourNs": "associatesPayPerHour",
+  "associatesPayPerHourMessage": "How much you will pay each associate a hour",
+
+  "sneakersCostHide": true,
+  "sneakersCostText": "SNEAKERS COST",
+  "sneakersCostValue": "",
+
+  "sneakersCostForFreeHide": true,
+  "sneakersCostForFreeText": "SNEAKERS COST FOR FREE",
+  "sneakersCostForFreeValue": "",
+
+  "sneakersCostForResaleHide": true,
+  "sneakersCostForResaleText": "SNEAKERS COST FOR RESALE",
+  "sneakersCostForResaleValue": "",
+
+  "sneakersQuantityHide": true,
+  "sneakersQuantityText": "SNEAKERS QUANTITY",
+  "sneakersQuantityValue": "",
+
+  "sneakersResaleAverageHide": true,
+  "sneakersResaleAverageText": "SNEAKERS RESALE AVERAGE",
+  "sneakersResaleAverageValue": "",
+
+  "totalCostHide": true,
+  "totalCostText": "TOTAL COST",
+  "totalCostValue": ""
+
+}

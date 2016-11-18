@@ -1,0 +1,54 @@
+
+/// import colors
+@import '_colors';
+
+/// import utils
+@import '_utils';
+
+/// import extends
+@import '_extends';
+
+/// import mixins
+@import '_mixins';
+
+
+.solo_btn {
+
+  cursor: pointer;
+  transition: .5s ease;
+
+  padding: rem-calc( 10px 15px );
+
+  border: none;
+  border-bottom: rem-calc(1px) solid $input-bottom-border;
+
+  color: $input-base-color;
+  background: transparent;
+
+  font-size: rem-calc( 14px );
+  font-family: 'Quattrocento Sans', sans-serif;
+
+  &:hover {
+    border-bottom: rem-calc( 1px ) solid $input-bottom-border-hover;
+  }
+
+  &:focus {
+    outline: 0;
+    border-bottom: rem-calc( 1px ) solid $input-bottom-border-hover;
+  }
+
+}
+
+.solo_btns .solo_btn {
+  float: left;
+  margin-right: rem-calc(15px);
+}
+
+.solo_btns {
+  @include clearfix;
+  float: left;
+
+  @include breakpoint(md) {
+    margin-top: rem-calc( 20px );
+  }
+}

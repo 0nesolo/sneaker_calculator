@@ -1,0 +1,64 @@
+
+/// import colors
+@import '_colors';
+
+/// import utils
+@import '_utils';
+
+/// import extends
+@import '_extends';
+
+/// import mixins
+@import '_mixins';
+
+.solo_field {
+
+  margin: rem-calc( 40px 0 );
+
+  p {
+    margin-top: rem-calc( 5px );
+  }
+
+  &.last {
+    margin-bottom: rem-calc( 15px );
+  }
+
+  // &.hide {
+  //   display: none;
+  // }
+
+}
+
+.solo_input {
+
+  flex: 1 0 auto;
+  transition: .5s ease;
+
+  display: inline-flex;
+  font-size: rem-calc( 14px );
+
+  border: none;
+  border-bottom: rem-calc( 1px ) solid $input-bottom-border;
+
+  padding: rem-calc( 10px 0 );
+
+  width: 100%;
+
+  @include breakpoint(md) {
+    width: 50%;
+  }
+
+  &::-webkit-input-placeholder,
+  &::-moz-placeholder,
+  &:-moz-placeholder,
+  &:-ms-input-placeholder {
+    color: $input-base-color;
+  }
+
+  &:focus {
+    border: none;
+    outline: none;
+    border-bottom: rem-calc( 1px ) solid $input-bottom-border-focus;
+  }
+
+}

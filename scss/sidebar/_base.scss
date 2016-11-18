@@ -1,0 +1,69 @@
+/// import colors
+@import '_colors';
+
+/// import utils
+@import '_utils';
+
+/// import extends
+@import '_extends';
+
+/// import mixins
+@import '_mixins';
+
+.solo_sidebar {
+
+  top: 0;
+  right: 0;
+  position: absolute;
+
+  z-index: 10;
+
+  li {
+    margin-bottom: rem-calc( 3px );
+    padding: rem-calc( 10px 100px 10px 25px );
+
+    &.editable {
+      background: $white-gray;
+    }
+    &.hide {
+      display: none;
+    }
+    &.toggle {
+      cursor: pointer;
+      background: $navy-blue;
+      font-size: rem-calc( 10px );
+
+      a {
+        color: #FFF;
+        float: none;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+    }
+    &.results {
+      background: $gold;
+      display: block !important;
+    }
+    &.resultsTotalCost {
+      background: $red;
+    }
+    &.disabledByInput,
+    &.disabledByNavigation {
+      display: none;
+    }
+    &.disabledByNavigation.results {
+      display: none !important;
+    }
+    small,
+    span {
+      display: block;
+    }
+    span {
+      font-size: rem-calc( 16px ) !important;
+      margin-top: rem-calc( 5px );
+    }
+  }
+
+}

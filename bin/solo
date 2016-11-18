@@ -1,0 +1,169 @@
+#!/usr/bin/env node
+
+// npm
+var grunt = require('grunt');
+var chalk = require('chalk');
+var program = require('commander');
+var Handlebars = require('handlebars');
+
+// imports
+var calculator = require('../lib/cli');
+var templates = require('../lib/templates');
+
+// create cli calculator
+program
+  .version('0.12.4')
+  .option('-n, --sneakerName [sneakerName]', 'Name of sneaker')
+  .option('-c, --sneakerCost [sneakerCost]', 'Cost of sneaker', parseFloat)
+  .option('-f, --sneakersQuantityForFree [sneakersQuantityForFree]', 'Sneakers quantity for free', parseInt)
+  .option('-r, --sneakersQuantityForResale [sneakersQuantityForResale]', 'Sneakers quantity for resale', parseInt)
+  .option('-a, --associatesQuantity [associatesQuantity]', 'Associates quantity that will be working', parseInt)
+  .option('-p, --associatesHours [associatesHours]', 'Hours associates spend online', parseInt)
+  .option('-h, --associatesPayPerHour [associatesPayPerHour]', 'Associates pay per hour', parseFloat)
+  .parse(process.argv);
+
+// log
+console.log(chalk.black( templates.introduction ));
+
+/**
+ * Create mapping for associates inputs
+ * @type {Object}
+ */
+const associatesInputs = {
+  associatesQuantity: program.associatesQuantity || 1,
+  associatesPayPerHour: program.associatesHours || 0,
+  associatesHours: program.associatesPayPerHour || 0
+};
+
+/**
+ * Create userInputs of inputs
+ * @type {Object}
+ */
+const userInputs = {
+  sneakerName: program.sneakerName,
+  sneakerCost: program.sneakerCost,
+
+  sneakersQuantityForFree: program.sneakersQuantityForFree,
+  sneakersQuantityForResale: program.sneakersQuantityForResale,
+  associates: ( associatesInputs.associatesHours === 0 ? false : associatesInputs )
+};
+
+/**
+ * Response to running calculator
+ * @param {Object} errors
+ * @param {Object} calculatedInputs
+ */
+const response = function ( errors, calculatedInputs ) {
+
+  // if errors
+  if ( errors ) {
+
+    /**
+     * Errors template
+     * @type {Function}
+     */
+    const errorsTemplate = Handlebars.compile( templates.errors );
+
+    /**
+     * Errors template results
+     * @type {Object}
+     */
+    const errorsTemplateResults = errorsTemplate( errors );
+
+    // log
+    console.log( chalk.black( errorsTemplateResults ) );
+
+    // stop execution
+    return false;
+
+  }
+
+  /**
+   * Cache data
+   * @type {Object}
+   */
+  const cacheData = { calculatedInputs, userInputs };
+
+  /**
+   * Sneakers template
+   * @type {Function}
+   */
+  const sneakersTemplate = Handlebars.compile( templates.sneakers );
+
+  /**
+   * Sneakers template results
+   * @type {Object}
+   */
+  const sneakersTemplateResult = sneakersTemplate( cacheData );
+
+  // log
+  console.log( chalk.black( sneakersTemplateResult ) );
+
+  // if associates doesn't exist 
+  if ( !calculatedInputs.associates ) {
+
+    /**
+     * No associates template
+     * @type {Function}
+     */
+    const noAssociatesTemplate = Handlebars.compile( templates.noAssociates );
+
+    // log
+    console.log( chalk.black( noAssociatesTemplate({}) ) );
+
+  } else {
+
+    /**
+     * Associates template
+     * @type {Function}
+     */
+    const associatesTemplate = Handlebars.compile( templates.associates );
+
+    /**
+     * Associate template results
+     * @type {Object}
+     */
+    const associatesTemplateResult = associatesTemplate( cacheData );
+
+    // log
+    console.log( chalk.black( associatesTemplateResult ) );
+
+  }
+
+  /**
+   * Total cost template
+   * @type {Function}
+   */
+  const totalCostTemplate = Handlebars.compile( templates.totalCost );
+
+  /**
+   * Total cost template results
+   * @type {Object}
+   */
+  const totalCostTemplateResults = totalCostTemplate( cacheData );
+
+  // log
+  console.log( chalk.black( totalCostTemplateResults ) );
+
+  /**
+   * Total resale average
+   * @type {Function}
+   */
+  const totalResaleAverage = Handlebars.compile( templates.average );
+
+  /**
+   * Total resale average results
+   * @type {Object}
+   */
+  const totalResaleAverageResults = totalResaleAverage( cacheData );
+
+  // log
+  console.log( chalk.black( totalResaleAverageResults ) );
+
+  // create output
+  grunt.file.write('output.json', JSON.stringify( cacheData, null, 4 ));
+
+};
+
+// calculate
+calculator( userInputs, response );
